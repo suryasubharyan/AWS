@@ -29,16 +29,30 @@
     "resource_type": "api_gateway",
     "deploy_stage": "api",
     "dependencies": [],
-    "resources": {},
+    "resources": {
+      "/hello": {
+        "enable_cors": false,
+        "GET": {
+          "authorization_type": "NONE",
+          "integration_type": "mock",
+          "api_key_required": false,
+          "method_request_parameters": {},
+          "integration_request_body_template": {},
+          "responses": [],
+          "integration_responses": [],
+          "default_error_pattern": true
+        }
+      }
+    },
     "tags": {}
   },
-  "sqs_handler-role":{
-    "predefined_policies":[],
-    "principal_service":"lambda",
-    "custom_policies":[
+  "sqs_handler-role": {
+    "predefined_policies": [],
+    "principal_service": "lambda",
+    "custom_policies": [
       "lambda-basic-execution"
     ],
-    "resource_type":"iam_role",
-    "tags":{}
+    "resource_type": "iam_role",
+    "tags": {}
   }
 }
